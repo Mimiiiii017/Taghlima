@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagħlima - Learn Maltese One Game at a Time</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <nav class="main-nav">
+        <div class="logo">Tagħlima</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="lessons.html">Lessons</a>
+          <a href="games.html">Games</a>
+          <a href="dashboard.html">Dashboard</a>
+          <button id="login-btn" class="btn btn-outline">Log In</button>
+          <button id="signup-btn" class="btn btn-primary">Sign Up</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Tagħlima</h1>
+        <p class="slogan">Learn Maltese. One Game at a Time.</p>
+        <button id="get-started-btn" class="btn btn-large btn-primary">Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Why Learn with Tagħlima?</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎮</div>
+          <h3>Game-Based Learning</h3>
+          <p>Learn through fun interactive games that make Maltese language acquisition enjoyable</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏝️</div>
+          <h3>Cultural Immersion</h3>
+          <p>Discover Maltese culture while learning the language with culturally relevant content</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Track Progress</h3>
+          <p>Earn XP, unlock achievements, and compete with friends on the leaderboard</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Begin your Maltese language journey today</h2>
+      <div class="benefits">
+        <div class="benefit">
+          <span class="check-icon">✓</span>
+          <span>No downloads required</span>
+        </div>
+        <div class="benefit">
+          <span class="check-icon">✓</span>
+          <span>Free to start</span>
+        </div>
+        <div class="benefit">
+          <span class="check-icon">✓</span>
+          <span>Learn at your own pace</span>
+        </div>
+      </div>
+      <div class="cta-buttons">
+        <button id="signup-cta-btn" class="btn btn-primary btn-large">Create Free Account</button>
+        <button id="demo-btn" class="btn btn-outline btn-large">Try Demo</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Maltese Language</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Maltese (Maltese: Malti) is the national language of Malta and an official language of the European Union. It is a Semitic language derived from late medieval Sicilian Arabic with a large number of loanwords from Italian, French, and English.</p>
+          <p>Learning Maltese connects you to Malta's rich history and culture that spans thousands of years, from ancient Phoenician settlements to its modern European identity.</p>
+        </div>
+        <div class="malta-facts">
+          <h3>Quick Facts About Malta</h3>
+          <ul>
+            <li>Population: Approx. 500,000</li>
+            <li>Official Languages: Maltese & English</li>
+            <li>Location: Mediterranean Sea, south of Sicily</li>
+            <li>Known for: Beautiful beaches, historic architecture, and unique culture</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Tagħlima</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="copyright">© 2025 Tagħlima. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for login/signup -->
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Log In</button>
+        <button class="auth-tab" data-tab="signup">Sign Up</button>
+      </div>
+      <div id="login-form" class="auth-form active">
+        <h2>Welcome Back</h2>
+        <form>
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Log In</button>
+        </form>
+        <div class="form-footer">
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+      </div>
+      <div id="signup-form" class="auth-form">
+        <h2>Create Account</h2>
+        <form>
+          <div class="form-group">
+            <label for="signup-name">Name</label>
+            <input type="text" id="signup-name" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+        </form>
+        <div class="form-footer">
+          <p>By signing up, you agree to our Terms of Service and Privacy Policy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
