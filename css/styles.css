@@ -167,7 +167,7 @@
   /* Hero Section */
   .hero {
     position: relative; /* Required for positioning the pseudo-element */
-    background-image: url('Taghlima/assets/hero.jpg'); /* Adjust path if needed */
+    background-image: url('../assets/hero.jpg'); /* Adjust path if needed */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
