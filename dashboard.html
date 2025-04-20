@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagħlima - Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="js/app.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <nav class="main-nav">
+        <div class="logo">Tagħlima</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="lessons.html">Lessons</a>
+          <a href="games.html">Games</a>
+          <a href="dashboard.html">Dashboard</a>
+          <div class="user-profile">
+            <img src="assets/pfp.jpg" alt="User Avatar" class="avatar">
+            <span class="username">User</span>
+            <div class="dropdown-content">
+              <a>Profile</a>
+              <a>Settings</a>
+              <a>Logout</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <div class="container">
+      <div class="dashboard-grid">
+        <div class="dashboard-card user-stats">
+          <h2>Your Progress</h2>
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-icon">🔥</div>
+              <div class="stat-info">
+                <span class="stat-value" id="streak-count">5</span>
+                <span class="stat-label">Day Streak</span>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-icon">⭐</div>
+              <div class="stat-info">
+                <span class="stat-value" id="xp-count">350</span>
+                <span class="stat-label">XP Total</span>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-icon">📚</div>
+              <div class="stat-info">
+                <span class="stat-value" id="level-count">3</span>
+                <span class="stat-label">Current Level</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-card daily-goal">
+          <h2>Daily Goal</h2>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%;"></div>
+          </div>
+          <p class="progress-info">70 / 100 XP today</p>
+          <button class="btn btn-primary">Continue Learning</button>
+        </div>
+
+        <div class="dashboard-card lesson-progress">
+          <h2>Lesson Progress</h2>
+          <div class="lessons-list">
+            <div class="lesson-item completed">
+              <div class="lesson-status">✓</div>
+              <div class="lesson-info">
+                <h3>Lesson 1: Greetings</h3>
+                <div class="lesson-progress-bar">
+                  <div class="lesson-progress-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-item in-progress">
+              <div class="lesson-status">⟳</div>
+              <div class="lesson-info">
+                <h3>Lesson 2: Numbers 1-10</h3>
+                <div class="lesson-progress-bar">
+                  <div class="lesson-progress-fill" style="width: 60%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-item">
+              <div class="lesson-status">○</div>
+              <div class="lesson-info">
+                <h3>Lesson 3: Food & Drink</h3>
+                <div class="lesson-progress-bar">
+                  <div class="lesson-progress-fill" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-card mini-leaderboard">
+          <h2>Leaderboard</h2>
+          <table class="leaderboard-table">
+            <tr>
+              <th>Rank</th>
+              <th>User</th>
+              <th>XP</th>
+            </tr>
+            <tr class="current-user">
+              <td>3</td>
+              <td>You</td>
+              <td>350</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Maria_M</td>
+              <td>520</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>John_T</td>
+              <td>475</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Alex93</td>
+              <td>290</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Sophia_K</td>
+              <td>240</td>
+            </tr>
+          </table>
+          <a href="leaderboard.html" class="view-all">View Full Leaderboard →</a>
+        </div>
+
+        <div class="dashboard-card daily-challenge">
+          <h2>Daily Challenge</h2>
+          <div class="challenge-container">
+            <div class="challenge-icon">🏆</div>
+            <div class="challenge-info">
+              <h3>Complete 3 mini-games</h3>
+              <p>Earn 50 bonus XP!</p>
+              <div class="challenge-progress">
+                <span class="completed">1</span>/3 completed
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-secondary">Play Now</button>
+        </div>
+
+        <div class="dashboard-card achievements">
+          <h2>Recent Achievements</h2>
+          <div class="achievements-grid">
+            <div class="achievement-item">
+              <div class="achievement-icon">🎯</div>
+              <span class="achievement-name">First Perfect Score</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🔄</div>
+              <span class="achievement-name">3-day Streak</span>
+            </div>
+            <div class="achievement-item locked">
+              <div class="achievement-icon">🔒</div>
+              <span class="achievement-name">Complete 5 Lessons</span>
+            </div>
+          </div>
+          <a href="achievements.html" class="view-all">View All Achievements →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Tagħlima</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="copyright">© 2025 Tagħlima. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
