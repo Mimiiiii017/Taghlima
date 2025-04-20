@@ -4,6 +4,7 @@
     background-color: var(--gray-100);
   }
   
+  /* Grid Layout */
   .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -17,7 +18,7 @@
     box-shadow: var(--shadow-sm);
   }
   
-  /* Make certain cards span multiple columns */
+  /* Card Layouts */
   .user-stats {
     grid-column: span 3;
   }
@@ -42,7 +43,7 @@
     grid-column: span 3;
   }
   
-  /* User stats styles */
+  /* User Stats Styles */
   .stats-container {
     display: flex;
     justify-content: space-around;
@@ -72,7 +73,7 @@
     font-size: 0.9rem;
   }
   
-  /* Progress bar styles */
+  /* Progress Bar Styles */
   .progress-bar {
     height: 12px;
     background-color: var(--gray-200);
@@ -92,7 +93,7 @@
     color: var(--gray-600);
   }
   
-  /* Lesson progress styles */
+  /* Lesson Progress Styles */
   .lessons-list {
     display: flex;
     flex-direction: column;
@@ -157,7 +158,7 @@
     background-color: var(--primary-color);
   }
   
-  /* Leaderboard styles */
+  /* Leaderboard Styles */
   .leaderboard-table {
     width: 100%;
     border-collapse: collapse;
@@ -184,7 +185,7 @@
     font-weight: 500;
   }
   
-  /* Daily challenge styles */
+  /* Daily Challenge Styles */
   .challenge-container {
     display: flex;
     align-items: center;
@@ -211,7 +212,7 @@
     font-weight: bold;
   }
   
-  /* Achievements styles */
+  /* Achievements Styles */
   .achievements-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -242,7 +243,7 @@
     font-size: 0.85rem;
   }
   
-  /* User profile dropdown */
+  /* User Profile Dropdown */
   .user-profile {
     position: relative;
     display: flex;
@@ -285,7 +286,7 @@
     text-decoration: none;
   }
   
-  /* Responsive adjustments */
+  /* Responsive Adjustments */
   @media (max-width: 992px) {
     .dashboard-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -302,6 +303,14 @@
     .achievements-grid {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    .dashboard .nav-overlay {
+        display: none !important;
+      }
+      
+      .dashboard .hamburger {
+        display: none !important;
+      }
   }
   
   @media (max-width: 768px) {
@@ -327,3 +336,42 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  
+  @media (max-width: 576px) {
+    .stats-container {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .stat-icon {
+      font-size: 1.75rem;
+    }
+    
+    .stat-value {
+      font-size: 1.25rem;
+    }
+    
+    .lesson-item {
+      padding: 0.5rem;
+    }
+    
+    .achievement-item {
+      padding: 0.75rem;
+    }
+    
+    .achievement-icon {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .dashboard-card {
+      padding: 1rem;
+    }
+    
+    .achievements-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  
