@@ -13,15 +13,26 @@
     <div class="container">
       <nav class="main-nav">
         <div class="logo">Tagħlima</div>
-        <div class="nav-links">
+  
+        <!-- Hamburger Menu Button -->
+        <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" tabindex="0">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+  
+        <!-- Navigation Links Panel -->
+        <div class="nav-links" id="nav-links">
           <a href="index.html">Home</a>
           <a href="lessons.html">Lessons</a>
           <a href="games.html">Games</a>
           <a href="dashboard.html">Dashboard</a>
           <button id="login-btn" class="btn btn-outline">Log In</button>
           <button id="signup-btn" class="btn btn-primary">Sign Up</button>
-          </div>
         </div>
+  
+        <!-- Semi‑opaque overlay behind the panel -->
+        <div class="nav-overlay" id="nav-overlay"></div>
       </nav>
     </div>
   </header>

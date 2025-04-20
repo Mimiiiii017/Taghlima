@@ -175,3 +175,45 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.style.display = 'none';
     document.body.style.overflow = ''; // Restore scrolling
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks  = document.getElementById('nav-links');
+    const overlay   = document.getElementById('nav-overlay');
+  
+    hamburger?.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('active')
+        ? 'hidden' : '';
+    });
+  
+    overlay?.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  
+    // close menu on link click
+    navLinks?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  
+    // ensure desktop view resets on resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+  
