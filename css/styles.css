@@ -7,6 +7,7 @@
     --bg: #fff1f3;
     --hovering: #a7152d;
     --hovering-lined: #fde2e6;
+    --secondary-hover: #d46b14;
     --white: #ffffff;
     --black: #202124;
     --gray-100: #f8f9fa;
@@ -164,7 +165,7 @@ a:hover {
 }
   
 .btn-secondary:hover {
-    background-color: #2d8f48;
+    background-color: var(--secondary-hover);
 }
   
 .btn-outline {
@@ -733,10 +734,6 @@ a:hover {
         --font-size-base: 0.875rem;  /* 14px */
     }
     
-    h1 {
-        font-size: var(--font-size-3xl);  /* 30px */
-    }
-    
     h2, .section-title {
         font-size: var(--font-size-xl);  /* 20px */
     }
@@ -869,10 +866,7 @@ a:hover {
 }
 
 @media (max-width: 375px) {
-    h1 {
-        font-size: var(--font-size-2xl);  /* 24px */
-    }
-    
+
     .section-title {
         margin-bottom: 1.5rem;
     }

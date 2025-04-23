@@ -303,14 +303,7 @@
     .achievements-grid {
       grid-template-columns: repeat(3, 1fr);
     }
-
-    .dashboard .nav-overlay {
-        display: none !important;
-      }
-      
-      .dashboard .hamburger {
-        display: none !important;
-      }
+    
   }
   
   @media (max-width: 768px) {

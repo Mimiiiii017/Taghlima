@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagħlima - Games Hub</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/games.css">
+  <script src="js/app.js" defer></script>
+  <script src="js/games.js" defer></script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+        <nav class="main-nav">
+            <div class="logo">Tagħlima</div>
+      
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" tabindex="0">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+      
+            <!-- Navigation Links Panel -->
+            <div class="nav-links" id="nav-links">
+              <a href="index.html">Home</a>
+              <a href="lessons.html">Lessons</a>
+              <a href="games.html">Games</a>
+              <a href="dashboard.html">Dashboard</a>
+              <div class="user-profile">
+                <img src="assets/pfp.jpg" alt="User Avatar" class="avatar">
+                <span class="username">User</span>
+                <div class="dropdown-content">
+                  <a>Profile</a>
+                  <a>Settings</a>
+                  <a>Logout</a>
+                  </div>
+            </div>
+            </div>
+      
+            <!-- Semi‑opaque overlay behind the panel -->
+            <div class="nav-overlay" id="nav-overlay"></div>
+          </nav>
+    </div>
+  </header>
+
+  <main class="games-hub">
+    <div class="container">
+      <h1 class="page-title">Games Hub</h1>
+      <p class="page-description">Play these fun games to practice your Maltese skills and earn XP!</p>
+      
+      <div class="daily-challenge-banner">
+        <div class="challenge-icon">🏆</div>
+        <div class="challenge-info">
+          <h2>Daily Challenge</h2>
+          <p>Play 3 different games today and earn 50 bonus XP!</p>
+          <div class="challenge-progress">
+            <span class="completed">1</span>/3 completed
+          </div>
+        </div>
+      </div>
+
+      <div class="games-grid">
+        <div class="game-card" data-game="word-match">
+          <div class="game-icon">🎮</div>
+          <h3>Word Match</h3>
+          <p>Match Maltese words to their correct images</p>
+          <div class="game-meta">
+            <span class="difficulty"><span class="star">★</span><span class="star">★</span><span class="empty-star">☆</span></span>
+            <span class="xp-reward">+15 XP</span>
+          </div>
+          <button class="btn btn-primary btn-play">Play Now</button>
+        </div>
+
+        <div class="game-card" data-game="fill-blanks">
+          <div class="game-icon">📝</div>
+          <h3>Fill in the Blanks</h3>
+          <p>Complete sentences with the correct Maltese words</p>
+          <div class="game-meta">
+            <span class="difficulty"><span class="star">★</span><span class="star">★</span><span class="star">★</span></span>
+            <span class="xp-reward">+25 XP</span>
+          </div>
+          <button class="btn btn-primary btn-play">Play Now</button>
+        </div>
+
+        <div class="game-card" data-game="time-challenge">
+          <div class="game-icon">⏱️</div>
+          <h3>Time Challenge</h3>
+          <p>Translate words and phrases against the clock</p>
+          <div class="game-meta">
+            <span class="difficulty"><span class="star">★</span><span class="star">★</span><span class="star">★</span></span>
+            <span class="xp-reward">+20 XP</span>
+          </div>
+          <button class="btn btn-primary btn-play">Play Now</button>
+        </div>
+
+        <div class="game-card" data-game="quick-quiz">
+          <div class="game-icon">❓</div>
+          <h3>Quick Quiz</h3>
+          <p>Test your knowledge with multiple-choice questions</p>
+          <div class="game-meta">
+            <span class="difficulty"><span class="star">★</span><span class="empty-star">☆</span><span class="empty-star">☆</span></span>
+            <span class="xp-reward">+10 XP</span>
+          </div>
+          <button class="btn btn-primary btn-play">Play Now</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Game container that will be shown when a game is selected -->
+  <div id="game-container" class="game-container">
+    <div class="game-header">
+      <h2 id="current-game-title">Game Title</h2>
+      <div class="game-controls">
+        <div class="score-display">Score: <span id="current-score">0</span></div>
+        <div id="timer-display" class="timer-display">Time: <span id="timer-value">60</span>s</div>
+        <button id="close-game" class="btn btn-outline">Exit Game</button>
+      </div>
+    </div>
+    
+    <div id="game-area" class="game-area">
+      <!-- Game content will be loaded here dynamically -->
+    </div>
+    
+    <div id="game-result" class="game-result">
+      <h2>Game Complete!</h2>
+      <div class="result-details">
+        <p>Score: <span id="final-score">0</span></p>
+        <p>XP Earned: <span id="xp-earned">0</span></p>
+      </div>
+      <div class="result-buttons">
+        <button id="play-again" class="btn btn-primary">Play Again</button>
+        <button id="return-hub" class="btn btn-outline">Return to Hub</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Word Match Game Template -->
+  <template id="word-match-template">
+    <div class="word-match-game">
+      <div class="game-instructions">
+        <p>Match the Maltese words to their correct images by dragging the words to the images.</p>
+      </div>
+      <div class="match-container">
+        <div class="words-container">
+          <div class="word-item" draggable="true" data-word="ħuta">ħuta</div>
+          <div class="word-item" draggable="true" data-word="qattus">qattus</div>
+          <div class="word-item" draggable="true" data-word="kelb">kelb</div>
+          <div class="word-item" draggable="true" data-word="għasfur">għasfur</div>
+        </div>
+        <div class="images-container">
+          <div class="image-item" data-word="kelb">
+            <img src="assets/dog.png" alt="Dog">
+            <div class="image-label">Dog</div>
+            <div class="drop-zone"></div>
+          </div>
+          <div class="image-item" data-word="qattus">
+            <img src="assets/cat.png" alt="Cat">
+            <div class="image-label">Cat</div>
+            <div class="drop-zone"></div>
+          </div>
+          <div class="image-item" data-word="għasfur">
+            <img src="assets/bird.png" alt="Bird">
+            <div class="image-label">Bird</div>
+            <div class="drop-zone"></div>
+          </div>
+          <div class="image-item" data-word="ħuta">
+            <img src="assets/fish.png" alt="Fish">
+            <div class="image-label">Fish</div>
+            <div class="drop-zone"></div>
+          </div>
+        </div>
+      </div>
+      <div class="game-controls">
+        <button id="check-matches" class="btn btn-primary">Check Answers</button>
+        <button id="reset-game" class="btn btn-outline">Reset</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Fill in the Blanks Game Template -->
+  <template id="fill-blanks-template">
+    <div class="fill-blanks-game">
+      <div class="game-instructions">
+        <p>Complete the sentences by dragging the correct words from the word bank.</p>
+      </div>
+      <div class="word-bank">
+        <div class="bank-word" draggable="true" data-word="niekol">niekol</div>
+        <div class="bank-word" draggable="true" data-word="ħobż">ħobż</div>
+        <div class="bank-word" draggable="true" data-word="xorb">xorb</div>
+        <div class="bank-word" draggable="true" data-word="ilma">ilma</div>
+        <div class="bank-word" draggable="true" data-word="nixrob">nixrob</div>
+      </div>
+      <div class="sentences-container">
+        <div class="sentence">
+          <span>Jiena </span>
+          <div class="blank-space" data-answer="niekol"></div>
+          <span> il-</span>
+          <div class="blank-space" data-answer="ħobż"></div>
+          <span>.</span>
+        </div>
+        <div class="sentence">
+          <span>Jiena </span>
+          <div class="blank-space" data-answer="nixrob"></div>
+          <span> l-</span>
+          <div class="blank-space" data-answer="ilma"></div>
+          <span>.</span>
+        </div>
+      </div>
+      <div class="game-controls">
+        <button id="check-blanks" class="btn btn-primary">Check Answers</button>
+        <button id="reset-blanks" class="btn btn-outline">Reset</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Time Challenge Game Template -->
+  <template id="time-challenge-template">
+    <div class="time-challenge-game">
+      <div class="game-instructions">
+        <p>Translate the word or phrase before time runs out! Type your answer and press Enter.</p>
+      </div>
+      <div class="challenge-word">
+        <h3 id="word-to-translate">bongu</h3>
+        <p>Translate to English:</p>
+      </div>
+      <div class="answer-input">
+        <input type="text" id="translation-input" placeholder="Type your answer...">
+        <button id="submit-translation" class="btn btn-primary">Submit</button>
+      </div>
+      <div class="translation-result" id="translation-result"></div>
+    </div>
+  </template>
+
+  <!-- Quick Quiz Game Template -->
+  <template id="quick-quiz-template">
+    <div class="quick-quiz-game">
+      <div class="game-instructions">
+        <p>Choose the correct translation for each word or phrase.</p>
+      </div>
+      <div class="quiz-question">
+        <h3 id="quiz-word">bongu</h3>
+        <p>What does this mean?</p>
+      </div>
+      <div class="quiz-options">
+        <button class="option-btn" data-correct="true">good morning</button>
+        <button class="option-btn">goodbye</button>
+        <button class="option-btn">good night</button>
+        <button class="option-btn">hello</button>
+      </div>
+      <div class="quiz-result" id="quiz-result"></div>
+    </div>
+  </template>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Tagħlima</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="copyright">© 2025 Tagħlima. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
