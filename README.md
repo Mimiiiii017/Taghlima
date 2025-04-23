@@ -37,3 +37,7 @@ Navigate using the top menu bar on each page.
 - Inspired by popular language-learning platforms.
 - Maltese language resources and community contributions.
 
+
+## Disclaimer
+
+This prototype was developed for an entrepreneurship class and is not a fully functional website.
