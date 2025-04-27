@@ -119,7 +119,7 @@ a:hover {
 .logo {
     height: 50px;
     width: 150px; 
-    background-image: url('../assets/logo_horizontal.png');
+    background-image: url('/assets/logo_horizontal.png');
     background-size: contain; 
     background-repeat: no-repeat; 
     background-position: center; 
@@ -346,7 +346,7 @@ a:hover {
 .footer-logo {
         height: 140px;
         width: 140px; 
-        background-image: url('../assets/logo_vertical.png');
+        background-image: url('/assets/logo_vertical.png');
         background-size: contain; 
         background-repeat: no-repeat; 
         background-position: center; 
