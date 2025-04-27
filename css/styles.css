@@ -2,12 +2,12 @@
 :root {
     /* Colors */
     --primary-color: #ca1836;
-    --secondary-color: #e97516;
-    --accent-color: #ffcb86;
+    --secondary-color: #EF774C;
+    --accent-color: #F4A325;
     --bg: #fff1f3;
     --hovering: #a7152d;
     --hovering-lined: #fde2e6;
-    --secondary-hover: #d46b14;
+    --secondary-hover: #d35d32;
     --white: #ffffff;
     --black: #202124;
     --gray-100: #f8f9fa;
@@ -117,9 +117,12 @@ a:hover {
 }
   
 .logo {
-    font-size: var(--font-size-2xl);
-    font-weight: bold;
-    color: var(--primary-color);
+    height: 50px;
+    width: 150px; 
+    background-image: url('../assets/logo_horizontal.png');
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
 }
   
 .nav-links {
@@ -329,7 +332,8 @@ a:hover {
 .main-footer {
     background-image: linear-gradient(to bottom right, rgb(73, 0, 0, 0.8), rgba(26, 26, 26, 0.9));
     color: var(--white);
-    padding: 3rem 0;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
 }
   
 .footer-content {
@@ -340,8 +344,12 @@ a:hover {
 }
   
 .footer-logo {
-    font-size: var(--font-size-xl);
-    font-weight: bold;
+        height: 140px;
+        width: 140px; 
+        background-image: url('../assets/logo_vertical.png');
+        background-size: contain; 
+        background-repeat: no-repeat; 
+        background-position: center; 
 }
   
 .footer-links {

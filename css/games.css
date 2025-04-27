@@ -18,11 +18,9 @@
     color: var(--gray-600);
   }
   
-  /* --------------------------------
-     Daily Challenge Banner
-     -------------------------------- */
+
   .daily-challenge-banner {
-    background: linear-gradient(135deg, var(--accent-color) 0%, #ffd54f 100%);
+    background: linear-gradient(135deg, #ffd65a 0%, #ffdda9 100%);
     padding: 1.5rem;
     border-radius: var(--border-radius);
     margin-bottom: 2rem;
@@ -51,9 +49,7 @@
     font-weight: bold;
   }
   
-  /* --------------------------------
-     Games Grid Layout
-     -------------------------------- */
+
   .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -115,9 +111,7 @@
     width: 100%;
   }
   
-  /* --------------------------------
-     Game Container & Layout
-     -------------------------------- */
+
   .game-container {
     position: fixed;
     top: 0;
@@ -172,9 +166,7 @@
     border-radius: var(--border-radius);
   }
   
-  /* --------------------------------
-     Game Results Display
-     -------------------------------- */
+
   .game-result {
     position: absolute;
     top: 50%;
@@ -207,9 +199,7 @@
     justify-content: center;
   }
   
-  /* --------------------------------
-     Word Match Game
-     -------------------------------- */
+
   .word-match-game {
     display: flex;
     flex-direction: column;
@@ -302,9 +292,7 @@
     background-color: rgba(229, 57, 53, 0.1);
   }
   
-  /* --------------------------------
-     Fill in the Blanks Game
-     -------------------------------- */
+
   .fill-blanks-game {
     display: flex;
     flex-direction: column;
@@ -394,9 +382,7 @@
     background-color: rgba(229, 57, 53, 0.1);
   }
   
-  /* --------------------------------
-     Time Challenge Game
-     -------------------------------- */
+  
   .time-challenge-game {
     display: flex;
     flex-direction: column;
@@ -451,9 +437,7 @@
     color: #e53935;
   }
   
-  /* --------------------------------
-     Quick Quiz Game
-     -------------------------------- */
+
   .quick-quiz-game {
     display: flex;
     flex-direction: column;
@@ -526,9 +510,7 @@
     color: #e53935;
   }
   
-  /* --------------------------------
-     User Profile Dropdown
-     -------------------------------- */
+ 
   .user-profile {
     position: relative;
     display: flex;
@@ -570,10 +552,7 @@
     background-color: var(--bg);
     text-decoration: none;
   }
-  
-  /* --------------------------------
-     Responsive Adjustments
-     -------------------------------- */
+
   @media (max-width: 992px) {
     .challenge-word h3 {
       font-size: var(--font-size-3xl);
