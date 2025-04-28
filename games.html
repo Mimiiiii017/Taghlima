@@ -107,6 +107,28 @@
           </div>
           <button class="btn btn-primary btn-play">Play Now</button>
         </div>
+
+        <div class="game-card" data-game="advanced-word-match">
+          <div class="game-icon">🔤</div>
+          <h3>Advanced Word Match</h3>
+          <p>Match Maltese words with their English translations</p>
+          <div class="game-meta">
+            <span class="difficulty"><span class="star">★</span><span class="star">★</span><span class="empty-star">☆</span></span>
+            <span class="xp-reward">+20 XP</span>
+          </div>
+          <button class="btn btn-primary btn-play">Play Now</button>
+        </div>
+        
+        <div class="game-card" data-game="memory-game">
+          <div class="game-icon">🧠</div>
+          <h3>Memory Game</h3>
+          <p>Find matching pairs of Maltese and English words</p>
+          <div class="game-meta">
+            <span class="difficulty"><span class="star">★</span><span class="star">★</span><span class="star">★</span></span>
+            <span class="xp-reward">+25 XP</span>
+          </div>
+          <button class="btn btn-primary btn-play">Play Now</button>
+        </div>
       </div>
     </div>
   </main>
@@ -255,6 +277,60 @@
       <div class="quiz-result" id="quiz-result"></div>
     </div>
   </template>
+
+  <!-- Advanced Word Match Game Template -->
+<template id="advanced-word-match-template">
+  <div class="advanced-word-match-game">
+    <div class="game-instructions">
+      <p>Match the Maltese words with their English translations by connecting them with lines.</p>
+    </div>
+    <div class="match-container">
+      <div class="word-columns">
+        <div class="maltese-column">
+          <div class="match-word" data-word="ktieb" data-index="0">ktieb</div>
+          <div class="match-word" data-word="dar" data-index="1">dar</div>
+          <div class="match-word" data-word="siġġu" data-index="2">siġġu</div>
+          <div class="match-word" data-word="tieqa" data-index="3">tieqa</div>
+          <div class="match-word" data-word="mejda" data-index="4">mejda</div>
+        </div>
+        <div class="connection-area" id="connection-area">
+          <!-- SVG lines will be drawn here -->
+          <svg id="connections-svg" width="100%" height="100%"></svg>
+        </div>
+        <div class="english-column">
+          <div class="match-word" data-word="window" data-index="3">window</div>
+          <div class="match-word" data-word="book" data-index="0">book</div>
+          <div class="match-word" data-word="chair" data-index="2">chair</div>
+          <div class="match-word" data-word="table" data-index="4">table</div>
+          <div class="match-word" data-word="house" data-index="1">house</div>
+        </div>
+      </div>
+    </div>
+    <div class="game-controls">
+      <button id="check-advanced-matches" class="btn btn-primary">Check Answers</button>
+      <button id="reset-advanced-game" class="btn btn-outline">Reset</button>
+    </div>
+  </div>
+</template>
+
+<!-- Memory Game Template -->
+<template id="memory-game-template">
+  <div class="memory-game">
+    <div class="game-instructions">
+      <p>Find matching pairs of Maltese and English words by flipping cards. Remember where each card is!</p>
+    </div>
+    <div class="memory-stats">
+      <div class="moves">Moves: <span id="move-count">0</span></div>
+      <div class="pairs">Pairs Found: <span id="pairs-found">0</span>/8</div>
+    </div>
+    <div class="memory-board">
+      <!-- Cards will be generated here dynamically -->
+    </div>
+    <div class="game-controls">
+      <button id="restart-memory" class="btn btn-outline">Restart Game</button>
+    </div>
+  </div>
+</template>
 
   <footer class="main-footer">
     <div class="container">

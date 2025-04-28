@@ -56,20 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     
-    // Lesson items click
-    const lessonItems = document.querySelectorAll('.lesson-item');
-    lessonItems.forEach(item => {
-      item.addEventListener('click', () => {
-        // Extract lesson number from text content
-        const lessonTitle = item.querySelector('h3').textContent;
-        const lessonNumber = lessonTitle.match(/Lesson (\d+)/)[1];
-        window.location.href = `lesson${lessonNumber}.html`;
-      });
-      
-      // Make lesson items look clickable
-      item.style.cursor = 'pointer';
-    });
-    
     // Logout functionality
     const logoutBtn = document.getElementById('logout-btn');
     if (logoutBtn) {

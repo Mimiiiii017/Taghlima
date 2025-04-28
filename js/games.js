@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
       'word-match': 15,
       'fill-blanks': 25,
       'time-challenge': 20,
-      'quick-quiz': 10
+      'quick-quiz': 10,
+      'advanced-word-match': 20,
+      'memory-game': 25
     };
     
     // Game elements
@@ -78,6 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'quick-quiz':
           currentGameTitle.textContent = 'Quick Quiz';
           break;
+          case 'advanced-word-match':
+    currentGameTitle.textContent = 'Advanced Word Match';
+    break;
+  case 'memory-game':
+    currentGameTitle.textContent = 'Memory Game';
+    break;
       }
       
       // Load game content
@@ -118,6 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
           case 'quick-quiz':
             initQuickQuizGame();
             break;
+            case 'advanced-word-match':
+    initAdvancedWordMatchGame();
+    break;
+  case 'memory-game':
+    initMemoryGame();
+    break;
         }
       }
     }
@@ -564,6 +578,384 @@ function initFillBlanksGame() {
         });
       });
     }
+
+    // Advanced Word Match Game
+function initAdvancedWordMatchGame() {
+  const malteseSide = document.querySelectorAll('.maltese-column .match-word');
+  const englishSide = document.querySelectorAll('.english-column .match-word');
+  const connectionsSvg = document.getElementById('connections-svg');
+  const connectionArea = document.getElementById('connection-area');
+  const checkButton = document.getElementById('check-advanced-matches');
+  const resetButton = document.getElementById('reset-advanced-game');
+  
+  let activeWord = null;
+  let connections = [];
+  
+  // Function to draw a line between two elements
+  function drawConnection(element1, element2, isCorrect) {
+    const rect1 = element1.getBoundingClientRect();
+    const rect2 = element2.getBoundingClientRect();
+    
+    const containerRect = connectionArea.getBoundingClientRect();
+    
+    const x1 = 0;
+    const y1 = rect1.top + rect1.height/2 - containerRect.top;
+    
+    const x2 = connectionArea.offsetWidth;
+    const y2 = rect2.top + rect2.height/2 - containerRect.top;
+    
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', x1);
+    line.setAttribute('y1', y1);
+    line.setAttribute('x2', x2);
+    line.setAttribute('y2', y2);
+    line.setAttribute('stroke', isCorrect === undefined ? '#007bff' : (isCorrect ? '#28a745' : '#dc3545'));
+    line.setAttribute('stroke-width', '3');
+    
+    connectionsSvg.appendChild(line);
+    
+    return {
+      line,
+      fromIndex: element1.getAttribute('data-index'),
+      toIndex: element2.getAttribute('data-index')
+    };
+  }
+  
+  // Clear all connections
+  function clearConnections() {
+    connectionsSvg.innerHTML = '';
+    connections = [];
+  }
+  
+  // Set up word selection
+  malteseSide.forEach(word => {
+    word.addEventListener('click', () => {
+      if (activeWord && activeWord.side === 'maltese') {
+        // If we already have a Maltese word selected, deselect it
+        activeWord.element.classList.remove('selected');
+        if (activeWord.element === word) {
+          activeWord = null;
+          return;
+        }
+      }
+      
+      // Select this word
+      word.classList.add('selected');
+      activeWord = { element: word, side: 'maltese', index: word.getAttribute('data-index') };
+      
+      // If we have an English word selected, make a connection
+      if (activeWord && activeWord.partner) {
+        const connection = drawConnection(activeWord.element, activeWord.partner.element);
+        connections.push({
+          maltese: activeWord.side === 'maltese' ? activeWord.element : activeWord.partner.element,
+          english: activeWord.side === 'english' ? activeWord.element : activeWord.partner.element,
+          connection: connection
+        });
+        
+        // Reset selection
+        activeWord.element.classList.remove('selected');
+        activeWord.partner.element.classList.remove('selected');
+        activeWord = null;
+      }
+    });
+  });
+  
+  englishSide.forEach(word => {
+    word.addEventListener('click', () => {
+      if (activeWord && activeWord.side === 'english') {
+        // If we already have an English word selected, deselect it
+        activeWord.element.classList.remove('selected');
+        if (activeWord.element === word) {
+          activeWord = null;
+          return;
+        }
+      }
+      
+      // Select this word
+      word.classList.add('selected');
+      
+      // If we have a Maltese word selected, make a connection
+      if (activeWord && activeWord.side === 'maltese') {
+        const maltese = activeWord.element;
+        const english = word;
+        
+        // Create a connection
+        const connection = drawConnection(maltese, english);
+        connections.push({
+          maltese: maltese,
+          english: english,
+          connection: connection
+        });
+        
+        // Reset selection
+        maltese.classList.remove('selected');
+        english.classList.remove('selected');
+        activeWord = null;
+      } else {
+        // Otherwise, set this as the active word
+        activeWord = { element: word, side: 'english', index: word.getAttribute('data-index') };
+      }
+    });
+  });
+  
+  // Check answers button
+  if (checkButton) {
+    checkButton.addEventListener('click', () => {
+      let correctMatches = 0;
+      
+      // Remove old lines
+      connectionsSvg.innerHTML = '';
+      
+      // Check each connection
+      connections.forEach(conn => {
+        const maltese = conn.maltese;
+        const english = conn.english;
+        
+        const maltIndex = maltese.getAttribute('data-index');
+        const engIndex = english.getAttribute('data-index');
+        
+        const isCorrect = maltIndex === engIndex;
+        
+        // Redraw the connection with appropriate color
+        drawConnection(maltese, english, isCorrect);
+        
+        if (isCorrect) {
+          correctMatches++;
+        }
+      });
+      
+      // Update score
+      updateScore(correctMatches);
+      
+      // End game if all words have connections
+      if (connections.length === malteseSide.length) {
+        setTimeout(() => {
+          endGame();
+        }, 1500);
+      }
+    });
+  }
+  
+  // Reset game button
+  if (resetButton) {
+    resetButton.addEventListener('click', () => {
+      clearConnections();
+      
+      // Reset all words
+      malteseSide.forEach(word => {
+        word.classList.remove('selected');
+      });
+      
+      englishSide.forEach(word => {
+        word.classList.remove('selected');
+      });
+      
+      // Reset active word
+      activeWord = null;
+      
+      // Reset score
+      updateScore(0);
+    });
+  }
+  
+  // Handle window resize to redraw connections
+  window.addEventListener('resize', () => {
+    if (connections.length > 0) {
+      const oldConnections = [...connections];
+      clearConnections();
+      
+      oldConnections.forEach(conn => {
+        const connection = drawConnection(conn.maltese, conn.english);
+        connections.push({
+          maltese: conn.maltese,
+          english: conn.english,
+          connection: connection
+        });
+      });
+    }
+  });
+}
+
+// Memory Game
+function initMemoryGame() {
+  const memoryBoard = document.querySelector('.memory-board');
+  const moveCountDisplay = document.getElementById('move-count');
+  const pairsFoundDisplay = document.getElementById('pairs-found');
+  const restartButton = document.getElementById('restart-memory');
+  
+  let moves = 0;
+  let pairsFound = 0;
+  let firstCard = null;
+  let secondCard = null;
+  let lockBoard = false;
+  
+  // Word pairs for the memory game (Maltese and English)
+  const wordPairs = [
+    { maltese: 'kelb', english: 'dog' },
+    { maltese: 'qattus', english: 'cat' },
+    { maltese: 'għasfur', english: 'bird' },
+    { maltese: 'ħuta', english: 'fish' },
+    { maltese: 'wieħed', english: 'one' },
+    { maltese: 'tnejn', english: 'two' },
+    { maltese: 'tlieta', english: 'three' },
+    { maltese: 'erbgħa', english: 'four' }
+  ];
+  
+  // Create cards for the game
+  function createCards() {
+    // Clear the board
+    memoryBoard.innerHTML = '';
+    
+    // Create an array with all cards (Maltese and English for each pair)
+    const cards = [];
+    wordPairs.forEach((pair, index) => {
+      cards.push({
+        word: pair.maltese,
+        language: 'maltese',
+        pairIndex: index
+      });
+      cards.push({
+        word: pair.english,
+        language: 'english',
+        pairIndex: index
+      });
+    });
+    
+    // Shuffle the cards
+    const shuffledCards = shuffleArray([...cards]);
+    
+    // Create the board
+    shuffledCards.forEach((card, index) => {
+      const cardElement = document.createElement('div');
+      cardElement.classList.add('memory-card');
+      cardElement.setAttribute('data-index', index);
+      cardElement.setAttribute('data-pair', card.pairIndex);
+      cardElement.setAttribute('data-language', card.language);
+      
+      const cardFront = document.createElement('div');
+      cardFront.classList.add('card-front');
+      cardFront.textContent = '?';
+      
+      const cardBack = document.createElement('div');
+      cardBack.classList.add('card-back');
+      cardBack.textContent = card.word;
+      
+      cardElement.appendChild(cardFront);
+      cardElement.appendChild(cardBack);
+      
+      // Add click event
+      cardElement.addEventListener('click', flipCard);
+      
+      memoryBoard.appendChild(cardElement);
+    });
+  }
+  
+  // Shuffle array (Fisher-Yates algorithm)
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  
+  // Flip card function
+  function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
+    
+    this.classList.add('flipped');
+    
+    if (!firstCard) {
+      // First card flipped
+      firstCard = this;
+      return;
+    }
+    
+    // Second card flipped
+    secondCard = this;
+    checkForMatch();
+  }
+  
+  // Check if the two flipped cards match
+  function checkForMatch() {
+    // Increment move counter
+    moves++;
+    moveCountDisplay.textContent = moves;
+    
+    const isPair = firstCard.getAttribute('data-pair') === secondCard.getAttribute('data-pair');
+    const isDifferentLanguage = firstCard.getAttribute('data-language') !== secondCard.getAttribute('data-language');
+    
+    // Only match if the pair index is the same AND one is Maltese and one is English
+    if (isPair && isDifferentLanguage) {
+      // Cards match
+      disableCards();
+      pairsFound++;
+      pairsFoundDisplay.textContent = pairsFound;
+      
+      // Check if all pairs are found
+      if (pairsFound === wordPairs.length) {
+        setTimeout(() => {
+          endGame();
+        }, 1000);
+      }
+    } else {
+      // Cards don't match
+      unflipCards();
+    }
+  }
+  
+  // Disable matched cards
+  function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    
+    firstCard.classList.add('matched');
+    secondCard.classList.add('matched');
+    
+    resetBoard();
+  }
+  
+  // Unflip unmatched cards
+  function unflipCards() {
+    lockBoard = true;
+    
+    setTimeout(() => {
+      firstCard.classList.remove('flipped');
+      secondCard.classList.remove('flipped');
+      
+      resetBoard();
+    }, 1000);
+  }
+  
+  // Reset board for next selection
+  function resetBoard() {
+    [firstCard, secondCard] = [null, null];
+    lockBoard = false;
+  }
+  
+  // Reset game function
+  function resetGame() {
+    moves = 0;
+    pairsFound = 0;
+    moveCountDisplay.textContent = moves;
+    pairsFoundDisplay.textContent = pairsFound;
+    
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+    
+    createCards();
+  }
+  
+  // Initialize game
+  resetGame();
+  
+  // Restart button event
+  if (restartButton) {
+    restartButton.addEventListener('click', resetGame);
+  }
+}
     
     // Timer functions
     function startTimer() {

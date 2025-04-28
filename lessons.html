@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagħlima - Lessons Hub</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/lessons.css">
+  <script src="js/app.js" defer></script>
+  <script src="js/lessons.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+              <section class="logo">
+                <a href="index.html"></a>
+              </section>
+          
+                <!-- Hamburger Menu Button -->
+                <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" tabindex="0">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+          
+                <!-- Navigation Links Panel -->
+                <div class="nav-links" id="nav-links">
+                  <a href="index.html">Home</a>
+                  <a href="lessons.html">Lessons</a>
+                  <a href="games.html">Games</a>
+                  <a href="dashboard.html">Dashboard</a>
+                  <div class="user-profile">
+                    <img src="assets/pfp.jpg" alt="User Avatar" class="avatar">
+                    <span class="username">User</span>
+                    <div class="dropdown-content">
+                      <a>Profile</a>
+                      <a>Settings</a>
+                      <a>Logout</a>
+                      </div>
+                </div>
+                </div>
+          
+                <!-- Semi‑opaque overlay behind the panel -->
+                <div class="nav-overlay" id="nav-overlay"></div>
+              </nav>
+        </div>
+      </header>
+
+  <main class="lessons-hub">
+    <div class="container">
+      <h1 class="page-title">Lessons Hub</h1>
+      <p class="page-description">Explore notes, practice pronunciation, and study with flashcards.</p>
+      
+      <!-- Lesson Notes Section -->
+      <section class="lesson-section">
+        <h2 class="section-title">Lesson Notes</h2>
+        <div class="lessons-grid">
+          <div class="lesson-card" data-lesson="lesson1">
+            <h3>Lesson 1: Greetings</h3>
+            <p class="lesson-preview">Learn basic Maltese greetings and introductions. Start with "Bongu" (Good morning) and "Saħħa" (Hello)...</p>
+            <div class="lesson-actions">
+              <button class="btn btn-primary view-notes" data-lesson="lesson1">View Notes</button>
+              <button class="btn btn-outline download-notes" data-lesson="lesson1">Download Notes</button>
+            </div>
+          </div>
+
+          <div class="lesson-card" data-lesson="lesson2">
+            <h3>Lesson 2: Numbers 1-10</h3>
+            <p class="lesson-preview">Learn how to count from 1 to 10 in Maltese. Starting with "wieħed" (one), "tnejn" (two), "tlieta" (three)...</p>
+            <div class="lesson-actions">
+              <button class="btn btn-primary view-notes" data-lesson="lesson2">View Notes</button>
+              <button class="btn btn-outline download-notes" data-lesson="lesson2">Download Notes</button>
+            </div>
+          </div>
+
+          <div class="lesson-card" data-lesson="lesson3">
+            <h3>Lesson 3: Food & Drink</h3>
+            <p class="lesson-preview">Learn common food and drink vocabulary in Maltese. Essential terms include "ħobż" (bread), "ilma" (water)...</p>
+            <div class="lesson-actions">
+              <button class="btn btn-primary view-notes" data-lesson="lesson3">View Notes</button>
+              <button class="btn btn-outline download-notes" data-lesson="lesson3">Download Notes</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pronunciation Practice Section -->
+      <section class="lesson-section">
+        <div class="pronounce-card">
+        <h2 class="section-title">Pronunciation Practice</h2>
+          <div class="pronunciation-practice">
+            <div class="pronunciation-input">
+              <input type="text" id="pronounce-word" placeholder="Enter a word" />
+              <button class="btn btn-primary" id="pronounce-button">Pronounce 🔊</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <!-- Flashcards Practice Section -->
+      <section class="lesson-section" id="flashcard-practice">
+        <div class="flashcard-card">
+        <h2 class="section-title">Flashcards Practice</h2>
+        <p class="section-description">Click on a card to flip it and reveal the English translation.</p>
+      
+        <div class="flashcards-grid" id="flashcards-container">
+          <!-- 4 random flashcards will be inserted here -->
+        </div>
+      
+        <div class="shuffle-button-container" style="text-align: center; margin-top: 20px;">
+          <button id="shuffle-flashcards" class="btn btn-primary">Shuffle Flashcards</button>
+        </div>
+    </div>
+      </section>
+      
+      
+    </div>
+  </main>
+
+  <!-- Lesson Notes Modal -->
+  <div id="lesson-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="modal-lesson-title">Lesson Title</h2>
+      <div id="modal-lesson-content">
+        <!-- Lesson content will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Lesson Content Templates (hidden) -->
+  <template id="lesson1-content">
+    <div class="lesson-content">
+      <h3>Basic Greetings</h3>
+      <ul>
+        <li><strong>Bongu</strong> - Good morning</li>
+        <li><strong>Saħħa</strong> - Hello</li>
+        <li><strong>Kif int?</strong> - How are you?</li>
+        <li><strong>Tajjeb, grazzi</strong> - Fine, thank you</li>
+        <li><strong>Il-lejl it-tajjeb</strong> - Good night</li>
+      </ul>
+      
+      <h3>Introductions</h3>
+      <ul>
+        <li><strong>Jien...</strong> - I am...</li>
+        <li><strong>X'jismek?</strong> - What is your name?</li>
+        <li><strong>Pjaċir</strong> - Nice to meet you</li>
+      </ul>
+      
+      <h3>Practice Dialogue</h3>
+      <p><strong>Maria:</strong> Bongu! Jien Maria. X'jismek?<br>
+      <strong>John:</strong> Saħħa Maria! Jien John. Kif int?<br>
+      <strong>Maria:</strong> Tajjeb, grazzi. Pjaċir li ltqajna!<br>
+      <strong>John:</strong> Pjaċir ukoll!</p>
+    </div>
+  </template>
+
+  <template id="lesson2-content">
+    <div class="lesson-content">
+      <h3>Numbers 1-10 in Maltese</h3>
+      <ul>
+        <li><strong>1 - Wieħed</strong> (pronounced "wee-hed")</li>
+        <li><strong>2 - Tnejn</strong> (pronounced "t-nayn")</li>
+        <li><strong>3 - Tlieta</strong> (pronounced "t-lee-ta")</li>
+        <li><strong>4 - Erbgħa</strong> (pronounced "er-ba")</li>
+        <li><strong>5 - Ħamsa</strong> (pronounced "ham-sa")</li>
+        <li><strong>6 - Sitta</strong> (pronounced "sit-ta")</li>
+        <li><strong>7 - Sebgħa</strong> (pronounced "se-ba")</li>
+        <li><strong>8 - Tmienja</strong> (pronounced "t-mee-n-ya")</li>
+        <li><strong>9 - Disgħa</strong> (pronounced "dis-a")</li>
+        <li><strong>10 - Għaxra</strong> (pronounced "ash-ra")</li>
+      </ul>
+      
+      <h3>Practice Tips</h3>
+      <p>The Maltese number system is Semitic in origin. Many numbers have unique pronunciations, particularly noting the silent "għ" in numbers like "erbgħa" (4) and "disgħa" (9).</p>
+      
+      <h3>Common Uses</h3>
+      <p>Practice using numbers in everyday situations:</p>
+      <ul>
+        <li>Telling time: <strong>"Hija s-sitta"</strong> (It's six o'clock)</li>
+        <li>Shopping: <strong>"Nixtieq tnejn, jekk jogħġbok"</strong> (I would like two, please)</li>
+        <li>Phone numbers, counting objects, etc.</li>
+      </ul>
+    </div>
+  </template>
+
+  <template id="lesson3-content">
+    <div class="lesson-content">
+      <h3>Essential Food & Drink Vocabulary</h3>
+      <ul>
+        <li><strong>Ħobż</strong> - Bread</li>
+        <li><strong>Ilma</strong> - Water</li>
+        <li><strong>Kafè</strong> - Coffee</li>
+        <li><strong>Ħalib</strong> - Milk</li>
+        <li><strong>Laħam</strong> - Meat</li>
+        <li><strong>Ħut</strong> - Fish</li>
+        <li><strong>Ross</strong> - Rice</li>
+        <li><strong>Frott</strong> - Fruit</li>
+        <li><strong>Ħaxix</strong> - Vegetables</li>
+        <li><strong>Inbid</strong> - Wine</li>
+      </ul>
+      
+      <h3>Useful Phrases</h3>
+      <ul>
+        <li><strong>Nixtieq...</strong> - I would like...</li>
+        <li><strong>Għandi l-ġuħ</strong> - I am hungry</li>
+        <li><strong>Għandi l-għatx</strong> - I am thirsty</li>
+        <li><strong>Kemm jiswa?</strong> - How much does it cost?</li>
+        <li><strong>Menu, jekk jogħġbok</strong> - Menu, please</li>
+      </ul>
+      
+      <h3>Cultural Notes</h3>
+      <p>Traditional Maltese cuisine reflects the island's history, with influences from Italian, North African, and British cooking. Local specialties include:</p>
+      <ul>
+        <li><strong>Ftira</strong> - A ring-shaped flatbread</li>
+        <li><strong>Pastizzi</strong> - Savory pastries filled with ricotta or mushy peas</li>
+        <li><strong>Fenkata</strong> - Rabbit stew</li>
+        <li><strong>Ħobż biż-żejt</strong> - Bread with oil, typically topped with tomatoes, tuna, and capers</li>
+      </ul>
+    </div>
+  </template>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo"></div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="copyright">© 2025 Tagħlima. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

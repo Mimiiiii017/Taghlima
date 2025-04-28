@@ -1,0 +1,490 @@
+[
+    {
+      "maltese": "Bongu",
+      "english": "Good morning"
+    },
+    {
+      "maltese": "Il-lejl it-tajjeb",
+      "english": "Good night"
+    },
+    {
+      "maltese": "Insellimlek",
+      "english": "Hello"
+    },
+    {
+      "maltese": "Saħħa",
+      "english": "Goodbye"
+    },
+    {
+      "maltese": "Kif inti?",
+      "english": "How are you?"
+    },
+    {
+      "maltese": "Tajjeb, grazzi",
+      "english": "Good, thank you"
+    },
+    {
+      "maltese": "Merħba",
+      "english": "Welcome"
+    },
+    {
+      "maltese": "Skużani",
+      "english": "Excuse me"
+    },
+    {
+      "maltese": "Jiena tajjeb",
+      "english": "I am fine"
+    },
+    {
+      "maltese": "Tislijiet",
+      "english": "Greetings"
+    },
+    {
+      "maltese": "Wieħed",
+      "english": "One"
+    },
+    {
+      "maltese": "Tnejn",
+      "english": "Two"
+    },
+    {
+      "maltese": "Tlieta",
+      "english": "Three"
+    },
+    {
+      "maltese": "Erbgħa",
+      "english": "Four"
+    },
+    {
+      "maltese": "Ħamsa",
+      "english": "Five"
+    },
+    {
+      "maltese": "Sitta",
+      "english": "Six"
+    },
+    {
+      "maltese": "Sebgħa",
+      "english": "Seven"
+    },
+    {
+      "maltese": "Tmienja",
+      "english": "Eight"
+    },
+    {
+      "maltese": "Disgħa",
+      "english": "Nine"
+    },
+    {
+      "maltese": "Għaxra",
+      "english": "Ten"
+    },
+    {
+      "maltese": "Aħmar",
+      "english": "Red"
+    },
+    {
+      "maltese": "Aħdar",
+      "english": "Green"
+    },
+    {
+      "maltese": "Ikħal",
+      "english": "Blue"
+    },
+    {
+      "maltese": "Isfar",
+      "english": "Yellow"
+    },
+    {
+      "maltese": "Abjad",
+      "english": "White"
+    },
+    {
+      "maltese": "Iswed",
+      "english": "Black"
+    },
+    {
+      "maltese": "Griż",
+      "english": "Grey"
+    },
+    {
+      "maltese": "Oranġjo",
+      "english": "Orange"
+    },
+    {
+      "maltese": "Vjola",
+      "english": "Purple"
+    },
+    {
+      "maltese": "Roża",
+      "english": "Pink"
+    },
+    {
+      "maltese": "Ħobż",
+      "english": "Bread"
+    },
+    {
+      "maltese": "Ilma",
+      "english": "Water"
+    },
+    {
+      "maltese": "Frott",
+      "english": "Fruit"
+    },
+    {
+      "maltese": "Ħaxix",
+      "english": "Vegetables"
+    },
+    {
+      "maltese": "Kafè",
+      "english": "Coffee"
+    },
+    {
+      "maltese": "Te",
+      "english": "Tea"
+    },
+    {
+      "maltese": "Bajd",
+      "english": "Eggs"
+    },
+    {
+      "maltese": "Laħam",
+      "english": "Meat"
+    },
+    {
+      "maltese": "Ħut",
+      "english": "Fish"
+    },
+    {
+      "maltese": "Torta",
+      "english": "Pie"
+    },
+    {
+      "maltese": "Qattus",
+      "english": "Cat"
+    },
+    {
+      "maltese": "Kelb",
+      "english": "Dog"
+    },
+    {
+      "maltese": "Għasfur",
+      "english": "Bird"
+    },
+    {
+      "maltese": "Żiemel",
+      "english": "Horse"
+    },
+    {
+      "maltese": "Baqar",
+      "english": "Cows"
+    },
+    {
+      "maltese": "Ħanżir",
+      "english": "Pig"
+    },
+    {
+      "maltese": "Tiġieġa",
+      "english": "Chicken"
+    },
+    {
+      "maltese": "Serp",
+      "english": "Snake"
+    },
+    {
+      "maltese": "Dubbiena",
+      "english": "Fly"
+    },
+    {
+      "maltese": "Papra",
+      "english": "Duck"
+    },
+    {
+      "maltese": "Omm",
+      "english": "Mother"
+    },
+    {
+      "maltese": "Missier",
+      "english": "Father"
+    },
+    {
+      "maltese": "Oħt",
+      "english": "Sister"
+    },
+    {
+      "maltese": "Ħu",
+      "english": "Brother"
+    },
+    {
+      "maltese": "Nanna",
+      "english": "Grandmother"
+    },
+    {
+      "maltese": "Nannu",
+      "english": "Grandfather"
+    },
+    {
+      "maltese": "Tifel",
+      "english": "Boy"
+    },
+    {
+      "maltese": "Tifla",
+      "english": "Girl"
+    },
+    {
+      "maltese": "Ziju",
+      "english": "Uncle"
+    },
+    {
+      "maltese": "Zija",
+      "english": "Aunt"
+    },
+    {
+      "maltese": "Mur",
+      "english": "Go"
+    },
+    {
+      "maltese": "Oqgħod",
+      "english": "Stay"
+    },
+    {
+      "maltese": "Ikol",
+      "english": "Eat"
+    },
+    {
+      "maltese": "Ixrob",
+      "english": "Drink"
+    },
+    {
+      "maltese": "Ara",
+      "english": "See"
+    },
+    {
+      "maltese": "Isma",
+      "english": "Listen"
+    },
+    {
+      "maltese": "Tkellem",
+      "english": "Speak"
+    },
+    {
+      "maltese": "Inħobb",
+      "english": "Love"
+    },
+    {
+      "maltese": "Naħdem",
+      "english": "Work"
+    },
+    {
+      "maltese": "Nistrieħ",
+      "english": "Rest"
+    },
+    {
+      "maltese": "It-Tnejn",
+      "english": "Monday"
+    },
+    {
+      "maltese": "It-Tlieta",
+      "english": "Tuesday"
+    },
+    {
+      "maltese": "L-Erbgħa",
+      "english": "Wednesday"
+    },
+    {
+      "maltese": "Il-Ħamis",
+      "english": "Thursday"
+    },
+    {
+      "maltese": "Il-Ġimgħa",
+      "english": "Friday"
+    },
+    {
+      "maltese": "Is-Sibt",
+      "english": "Saturday"
+    },
+    {
+      "maltese": "Il-Ħadd",
+      "english": "Sunday"
+    },
+    {
+      "maltese": "Xita",
+      "english": "Rain"
+    },
+    {
+      "maltese": "Xemx",
+      "english": "Sun"
+    },
+    {
+      "maltese": "Borra",
+      "english": "Snow"
+    },
+    {
+      "maltese": "Ragħad",
+      "english": "Thunder"
+    },
+    {
+      "maltese": "Riħ",
+      "english": "Wind"
+    },
+    {
+      "maltese": "Ferħan",
+      "english": "Happy"
+    },
+    {
+      "maltese": "Imnikket",
+      "english": "Sad"
+    },
+    {
+      "maltese": "Irrabjat",
+      "english": "Angry"
+    },
+    {
+      "maltese": "Imħasseb",
+      "english": "Worried"
+    },
+    {
+      "maltese": "Eċitat",
+      "english": "Excited"
+    },
+    {
+      "maltese": "Fejn?",
+      "english": "Where?"
+    },
+    {
+      "maltese": "X'inhu?",
+      "english": "What is it?"
+    },
+    {
+      "maltese": "Min?",
+      "english": "Who?"
+    },
+    {
+      "maltese": "Meta?",
+      "english": "When?"
+    },
+    {
+      "maltese": "Għaliex?",
+      "english": "Why?"
+    },
+    {
+      "maltese": "Siġġu",
+      "english": "Chair"
+    },
+    {
+      "maltese": "Mejda",
+      "english": "Table"
+    },
+    {
+      "maltese": "Ktieb",
+      "english": "Book"
+    },
+    {
+      "maltese": "Skola",
+      "english": "School"
+    },
+    {
+      "maltese": "Komputer",
+      "english": "Computer"
+    },
+    {
+      "maltese": "Mobile",
+      "english": "Phone"
+    },
+    {
+      "maltese": "Lapes",
+      "english": "Pencil"
+    },
+    {
+      "maltese": "Pinna",
+      "english": "Pen"
+    },
+    {
+      "maltese": "Fuq",
+      "english": "On"
+    },
+    {
+      "maltese": "Taħt",
+      "english": "Under"
+    },
+    {
+      "maltese": "Baħar",
+      "english": "Sea"
+    },
+    {
+      "maltese": "Gżira",
+      "english": "Island"
+    },
+    {
+      "maltese": "Dar",
+      "english": "House"
+    },
+    {
+      "maltese": "Suq",
+      "english": "Market"
+    },
+    {
+      "maltese": "Pjazza",
+      "english": "Square"
+    },
+    {
+      "maltese": "Triq",
+      "english": "Street"
+    },
+    {
+      "maltese": "Imħażen",
+      "english": "Shops"
+    },
+    {
+      "maltese": "Knisja",
+      "english": "Church"
+    },
+    {
+      "maltese": "Mużew",
+      "english": "Museum"
+    },
+    {
+      "maltese": "Lukanda",
+      "english": "Hotel"
+    },
+    {
+      "maltese": "Kbir",
+      "english": "Big"
+    },
+    {
+      "maltese": "Żgħir",
+      "english": "Small"
+    },
+    {
+      "maltese": "Sabiħ",
+      "english": "Beautiful"
+    },
+    {
+      "maltese": "Ikrah",
+      "english": "Ugly"
+    },
+    {
+      "maltese": "Qawwi",
+      "english": "Strong"
+    },
+    {
+      "maltese": "Dgħajjef",
+      "english": "Weak"
+    },
+    {
+      "maltese": "Malajr",
+      "english": "Fast"
+    },
+    {
+      "maltese": "Bil-mod",
+      "english": "Slow"
+    },
+    {
+      "maltese": "Frisk",
+      "english": "Fresh"
+    },
+    {
+      "maltese": "Sħun",
+      "english": "Hot"
+    }
+  ]
