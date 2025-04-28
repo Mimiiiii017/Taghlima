@@ -9,64 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   // Initialize user data (would come from backend in production)
-  function initUserData() {
-    // For demo purposes, we're using hardcoded data
-    // In a real app, this would come from your authentication system
-    const userData = {
-      name: 'Maria',
-      avatar: 'images/avatar-placeholder.png',
-      streak: 5,
-      xp: 350,
-      level: 3,
-      dailyXP: 70,
-      dailyGoal: 100,
-      completedLessons: ['lesson-1'],
-      inProgressLessons: ['lesson-2'],
-      achievements: ['first-perfect-score', 'three-day-streak']
-    };
-    
-    // Update UI with user data
-    document.querySelector('.username').textContent = userData.name;
-    document.getElementById('streak-count').textContent = userData.streak;
-    document.getElementById('xp-count').textContent = userData.xp;
-    document.getElementById('level-count').textContent = userData.level;
-    
-    // Update daily goal progress
-    const progressFill = document.querySelector('.progress-fill');
-    const progressPercent = (userData.dailyXP / userData.dailyGoal) * 100;
-    progressFill.style.width = `${progressPercent}%`;
-    document.querySelector('.progress-info').textContent = `${userData.dailyXP} / ${userData.dailyGoal} XP today`;
-  }
   
-  // Initialize dashboard button actions
-  function initDashboardActions() {
-    // Continue learning button
-    const continueBtn = document.querySelector('.daily-goal .btn-primary');
-    if (continueBtn) {
-      continueBtn.addEventListener('click', () => {
-        window.location.href = 'lessons.html';
-      });
-    }
-    
-    // Play now button for daily challenge
-    const playNowBtn = document.querySelector('.daily-challenge .btn-secondary');
-    if (playNowBtn) {
-      playNowBtn.addEventListener('click', () => {
-        window.location.href = 'games.html';
-      });
-    }
-    
-    // Logout functionality
-    const logoutBtn = document.getElementById('logout-btn');
-    if (logoutBtn) {
-      logoutBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        // In a real app, you would clear the auth token
-        alert('Logging out...');
-        window.location.href = 'index.html';
-      });
-    }
-  }
   
   // Check if user has completed their daily activity
   function checkDailyStreak() {
