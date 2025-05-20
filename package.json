@@ -1,0 +1,24 @@
+{
+  "name": "taghlima2.0",
+  "version": "1.0.0",
+  "description": "Tagħlima is a web-based, game-driven platform designed to help users learn Maltese through interactive lessons and mini-games. Track your progress, earn XP, complete daily challenges, and compete with friends on the leaderboard—all in one engaging experience.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mimiiiii017/Taghlima.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mimiiiii017/Taghlima/issues"
+  },
+  "homepage": "https://github.com/Mimiiiii017/Taghlima#readme",
+  "dependencies": {
+    "firebase": "^11.8.0"
+  }
+}

@@ -119,37 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle form submissions
     const loginForm = document.querySelector('#login-form form');
     const signupForm = document.querySelector('#signup-form form');
-    
-    if (loginForm) {
-      loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
-        
-        // In a real app, you would authenticate with a server here
-        console.log('Login attempt:', { email, password });
-        
-        // For demo purposes, simulate successful login
-        alert('Login successful! Redirecting to dashboard...');
-        window.location.href = 'dashboard.html';
-      });
-    }
-    
-    if (signupForm) {
-      signupForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('signup-name').value;
-        const email = document.getElementById('signup-email').value;
-        const password = document.getElementById('signup-password').value;
-        
-        // In a real app, you would register the user with a server here
-        console.log('Signup attempt:', { name, email, password });
-        
-        // For demo purposes, simulate successful registration
-        alert('Account created successfully! Redirecting to dashboard...');
-        window.location.href = 'dashboard.html';
-      });
-    }
   }
   
   // Open the auth modal with the specified tab active
