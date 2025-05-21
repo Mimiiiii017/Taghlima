@@ -1,6 +1,6 @@
 [
     {
-      "maltese": "Bongu",
+      "maltese": "Bonġu", 
       "english": "Good morning"
     },
     {
@@ -12,7 +12,7 @@
       "english": "Hello"
     },
     {
-      "maltese": "Saħħa",
+      "maltese": "Ċaw",
       "english": "Goodbye"
     },
     {
@@ -32,12 +32,12 @@
       "english": "Excuse me"
     },
     {
-      "maltese": "Jiena tajjeb",
+      "maltese": "Jien tajjeb (Masculine)",
       "english": "I am fine"
     },
     {
-      "maltese": "Tislijiet",
-      "english": "Greetings"
+      "maltese": "Jiena tajba (Feminine)",
+      "english": "I am fine"
     },
     {
       "maltese": "Wieħed",
@@ -88,7 +88,7 @@
       "english": "Green"
     },
     {
-      "maltese": "Ikħal",
+      "maltese": "Blu",
       "english": "Blue"
     },
     {
@@ -140,7 +140,7 @@
       "english": "Coffee"
     },
     {
-      "maltese": "Te",
+      "maltese": "Tè",
       "english": "Tea"
     },
     {
@@ -176,8 +176,8 @@
       "english": "Horse"
     },
     {
-      "maltese": "Baqar",
-      "english": "Cows"
+      "maltese": "Baqra",
+      "english": "Cow"
     },
     {
       "maltese": "Ħanżir",
@@ -256,27 +256,39 @@
       "english": "Drink"
     },
     {
-      "maltese": "Ara",
-      "english": "See"
+      "maltese": "Tara",
+      "english": "To see"
     },
     {
-      "maltese": "Isma",
-      "english": "Listen"
+      "maltese": "Tisma",
+      "english": "To listen"
     },
     {
-      "maltese": "Tkellem",
-      "english": "Speak"
+      "maltese": "Titkellem",
+      "english": "To speak"
     },
     {
-      "maltese": "Inħobb",
+      "maltese": "Tħoss",
+      "english": "To feel"
+    },
+    {
+      "maltese": "Xamm",
+      "english": "To smell"
+    },
+    {
+      "maltese": "Togħma",
+      "english": "To taste"
+    },
+    {
+      "maltese": "Imħabba",
       "english": "Love"
     },
     {
-      "maltese": "Naħdem",
+      "maltese": "Xogħol",
       "english": "Work"
     },
     {
-      "maltese": "Nistrieħ",
+      "maltese": "Serħan",
       "english": "Rest"
     },
     {
@@ -328,15 +340,15 @@
       "english": "Wind"
     },
     {
-      "maltese": "Ferħan",
+      "maltese": "Kuntent/a",
       "english": "Happy"
     },
     {
-      "maltese": "Imnikket",
+      "maltese": "Dwejjaq",
       "english": "Sad"
     },
     {
-      "maltese": "Irrabjat",
+      "maltese": "Rabja",
       "english": "Angry"
     },
     {
@@ -350,6 +362,10 @@
     {
       "maltese": "Fejn?",
       "english": "Where?"
+    },
+    {
+      "maltese": "Xiex?",
+      "english": "What?"
     },
     {
       "maltese": "X'inhu?",
@@ -368,6 +384,10 @@
       "english": "Why?"
     },
     {
+      "maltese": "Għax",
+      "english": "Because"
+    },
+    {
       "maltese": "Siġġu",
       "english": "Chair"
     },
@@ -384,7 +404,7 @@
       "english": "School"
     },
     {
-      "maltese": "Komputer",
+      "maltese": "Kompjuter",
       "english": "Computer"
     },
     {
@@ -406,6 +426,14 @@
     {
       "maltese": "Taħt",
       "english": "Under"
+    },
+    {
+      "maltese": "Lemin",
+      "english": "Right"
+    },
+    {
+      "maltese": "Xellug",
+      "english": "Left"
     },
     {
       "maltese": "Baħar",
@@ -432,8 +460,8 @@
       "english": "Street"
     },
     {
-      "maltese": "Imħażen",
-      "english": "Shops"
+      "maltese": "Ħanut",
+      "english": "Store"
     },
     {
       "maltese": "Knisja",
@@ -456,12 +484,16 @@
       "english": "Small"
     },
     {
-      "maltese": "Sabiħ",
+      "maltese": "Sabiħ/a",
       "english": "Beautiful"
     },
     {
       "maltese": "Ikrah",
-      "english": "Ugly"
+      "english": "Ugly (Masculine)"
+    },
+    {
+      "maltese": "Kerha",
+      "english": "Ugly (Femiinine)"
     },
     {
       "maltese": "Qawwi",

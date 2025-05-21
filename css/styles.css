@@ -1,11 +1,11 @@
 /* Base styles and reset */
 :root {
     /* Colors */
-    --primary-color: #ca1836;
+    --primary-color: #cf0115;
     --secondary-color: #EF774C;
-    --accent-color: #F4A325;
+    --accent-color: #F6A12C;
     --bg: #fff1f3;
-    --hovering: #a7152d;
+    --hovering: #b90214;
     --hovering-lined: #fde2e6;
     --secondary-hover: #d35d32;
     --white: #ffffff;
