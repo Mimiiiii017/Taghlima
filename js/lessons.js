@@ -180,29 +180,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Shuffle Practice
-  const flashcardsContainer = document.getElementById('flashcards-container');
-  const shuffleButton = document.getElementById('shuffle-flashcards');
+  const flashcardsContainer = document.getElementById("flashcards-container");
+  const shuffleButton = document.getElementById("shuffle-flashcards");
   let wordsList = [];
-  
-  fetch('data/words.json')
-    .then(response => response.json())
-    .then(data => {
+
+  fetch("data/words.json")
+    .then((response) => response.json())
+    .then((data) => {
       wordsList = data;
       generateFlashcards();
     })
-    .catch(error => {
-      console.error('Failed to load flashcards', error);
+    .catch((error) => {
+      console.error("Failed to load flashcards", error);
     });
-  
+
   function generateFlashcards() {
-    flashcardsContainer.innerHTML = ''; // clear old flashcards
-  
+    flashcardsContainer.innerHTML = ""; // clear old flashcards
+
     const shuffled = [...wordsList].sort(() => 0.5 - Math.random());
     const selectedWords = shuffled.slice(0, 4);
-  
-    selectedWords.forEach(word => {
-      const flashcard = document.createElement('div');
-      flashcard.className = 'flashcard';
+
+    selectedWords.forEach((word) => {
+      const flashcard = document.createElement("div");
+      flashcard.className = "flashcard";
       flashcard.innerHTML = `
         <div class="flashcard-inner">
           <div class="flashcard-front">
@@ -215,17 +215,47 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
       flashcardsContainer.appendChild(flashcard);
     });
-  
+
     // Attach flip effect
-    flashcardsContainer.querySelectorAll('.flashcard').forEach(card => {
-      card.addEventListener('click', function() {
-        this.classList.toggle('flipped');
+    flashcardsContainer.querySelectorAll(".flashcard").forEach((card) => {
+      card.addEventListener("click", function () {
+        this.classList.toggle("flipped");
       });
     });
   }
-  
-  shuffleButton.addEventListener('click', function() {
+
+  shuffleButton.addEventListener("click", function () {
     generateFlashcards();
-    
   });
+
+  const categoryTabs = document.querySelectorAll(".category-tab");
+  const categoryContents = document.querySelectorAll(".category-content");
+
+  // Add category switching functionality
+  categoryTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove active class from all tabs
+      categoryTabs.forEach((t) => t.classList.remove("active"));
+      // Add active class to clicked tab
+      tab.classList.add("active");
+
+      // Hide all category contents
+      categoryContents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      // Show the corresponding category content
+      const categoryId = tab.getAttribute("data-category");
+      const targetContent = document.getElementById(`${categoryId}-content`);
+      if (targetContent) {
+        targetContent.classList.add("active");
+      }
+    });
+  });
+
+  // Set default active category
+  const defaultCategory = categoryTabs[0];
+  if (defaultCategory) {
+    defaultCategory.click();
+  }
 });

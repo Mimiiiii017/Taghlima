@@ -1,262 +1,503 @@
 /* Lessons Hub Styles */
 .lessons-hub {
-    padding: 2rem 0;
+  padding: 2rem 0;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.page-description {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--gray-600);
+}
+
+.lesson-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  color: var(--gray-900);
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-size: 1.75rem;
+}
+
+.section-description {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--gray-600);
+}
+
+/* Lessons Hub Styles */
+.lessons-hub {
+  padding: 2rem 0;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.page-description {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--gray-600);
+}
+
+/* Category Tabs */
+.lesson-category-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.category-tab {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-tab:hover {
+  background-color: var(--hovering-lined);
+}
+
+.category-tab.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Category Content */
+.category-content {
+  display: none;
+}
+
+.category-content.active {
+  display: block;
+}
+
+.lesson-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  color: var(--gray-900);
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-size: 1.75rem;
+}
+
+.section-description {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--gray-600);
+}
+
+/* Lesson Notes Grid */
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.lesson-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lesson-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.lesson-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.lesson-preview {
+  color: var(--gray-600);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.lesson-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Pronounciation search */
+.pronunciation-practice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pronounce-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding-bottom: 3rem;
+  padding-top: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.pronunciation-input {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.pronunciation-input input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 2px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.pronunciation-input input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Flashcards Grid */
+
+.flashcard-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding-bottom: 3rem;
+  padding-top: 2.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.shuffle-button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#shuffle-flashcards {
+  height: 40px;
+  padding: 0.5rem 1.5rem;
+  line-height: 1.5;
+}
+
+.flashcards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.flashcard {
+  height: 180px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius);
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.flashcard-front {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.flashcard-front h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.flashcard-back h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.flashcard-back {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  transform: rotateY(180deg);
+}
+
+/* Modal Styles (enhanced from original) */
+#lesson-modal .modal-content {
+  max-width: 700px;
+  padding: 2rem;
+}
+
+.lesson-content {
+  margin-top: 1.5rem;
+}
+
+.lesson-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--gray-300);
+  padding-bottom: 0.5rem;
+}
+
+.lesson-content h3:first-child {
+  margin-top: 0;
+}
+
+.lesson-content ul {
+  list-style-position: inside;
+  margin-bottom: 1rem;
+}
+
+.lesson-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.lesson-content p {
+  line-height: 1.6;
+}
+
+/* Pronounciation search */
+.pronunciation-practice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pronounce-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding-bottom: 3rem;
+  padding-top: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.pronunciation-input {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.pronunciation-input input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 2px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.pronunciation-input input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Flashcards Grid */
+
+.flashcard-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding-bottom: 3rem;
+  padding-top: 2.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.shuffle-button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#shuffle-flashcards {
+  height: 40px;
+  padding: 0.5rem 1.5rem;
+  line-height: 1.5;
+}
+
+.flashcards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.flashcard {
+  height: 180px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius);
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.flashcard-front {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.flashcard-front h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.flashcard-back h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.flashcard-back {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  transform: rotateY(180deg);
+}
+
+/* Modal Styles (enhanced from original) */
+#lesson-modal .modal-content {
+  max-width: 700px;
+  padding: 2rem;
+}
+
+.lesson-content {
+  margin-top: 1.5rem;
+}
+
+.lesson-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--gray-300);
+  padding-bottom: 0.5rem;
+}
+
+.lesson-content h3:first-child {
+  margin-top: 0;
+}
+
+.lesson-content ul {
+  list-style-position: inside;
+  margin-bottom: 1rem;
+}
+
+.lesson-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.lesson-content p {
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .lessons-grid,
+  .pronunciation-grid,
+  .flashcards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
-  
-  .page-title {
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  .page-description {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    color: var(--gray-600);
-  }
-  
-  .lesson-section {
-    margin-bottom: 3rem;
-  }
-  
-  .section-title {
-    color: var(--gray-900);
-    margin-bottom: 1.5rem;
-    position: relative;
-    font-size: 1.75rem;
-  }
-  
-  .section-description {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    color: var(--gray-600);
-  }
-  
-  /* Lesson Notes Grid */
-  .lessons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .lesson-card {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .lesson-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-  }
-  
-  .lesson-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
-  }
-  
-  .lesson-preview {
-    color: var(--gray-600);
-    margin-bottom: 1.25rem;
-    line-height: 1.5;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
+
   .lesson-actions {
-    display: flex;
-    gap: 0.75rem;
+    flex-direction: column;
   }
-  
-  /* Pronounciation search */
-  .pronunciation-practice {
-    display: flex;
+
+  .lesson-card {
+    padding: 1.25rem;
+  }
+
+  .lesson-category-tabs {
     flex-direction: column;
     align-items: center;
-  }
-  
-  .pronounce-card {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    padding-bottom: 3rem;
-    padding-top: 2.5rem;
-    box-shadow: var(--shadow-sm);
+    gap: 0.75rem;
   }
 
-  .pronunciation-input {
-    display: flex;
+  .category-tab {
     width: 100%;
-    max-width: 500px;
-    margin-top: 1rem;
-    gap: 0.5rem;
-  }
-  
-  .pronunciation-input input {
-    flex-grow: 1;
-    padding: 0.75rem;
-    border: 2px solid var(--gray-300);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-  }
-  
-  .pronunciation-input input:focus {
-    border-color: var(--primary-color);
-    outline: none;
-  }
-  
-  
-  /* Flashcards Grid */
-
-  .flashcard-card {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    padding-bottom: 3rem;
-    padding-top: 2.5rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .shuffle-button-container {
+    max-width: 300px;
     text-align: center;
-    margin-top: 2rem;
   }
-  
-  #shuffle-flashcards {
-    height: 40px;
-    padding: 0.5rem 1.5rem;
-    line-height: 1.5;
-  }
-  
+}
+
+@media (max-width: 576px) {
+  .lessons-grid,
+  .pronunciation-grid,
   .flashcards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
   }
-  
+
+  .play-audio {
+    width: 100%;
+  }
+
   .flashcard {
-    height: 180px;
-    perspective: 1000px;
-    cursor: pointer;
-  }
-  
-  .flashcard-inner {
-    position: relative;
-    width: 100%;
     height: 150px;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: var(--shadow-md);
-    border-radius: var(--border-radius);
   }
-  
-  .flashcard.flipped .flashcard-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flashcard-front, .flashcard-back {
-    position: absolute;
-    width: 100%;
-    height: 150px;
-    backface-visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-  }
-  
-  .flashcard-front {
-    background-color: var(--primary-color);
-    color: var(--white);
-  }
-  
-  .flashcard-front h3 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  
-  .flashcard-back h3 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
+}
 
-  .flashcard-back {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    transform: rotateY(180deg);
-  }
-  
-  /* Modal Styles (enhanced from original) */
-  #lesson-modal .modal-content {
-    max-width: 700px;
-    padding: 2rem;
-  }
-  
-  .lesson-content {
-    margin-top: 1.5rem;
-  }
-  
-  .lesson-content h3 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--primary-color);
-    border-bottom: 1px solid var(--gray-300);
-    padding-bottom: 0.5rem;
-  }
-  
-  .lesson-content h3:first-child {
-    margin-top: 0;
-  }
-  
-  .lesson-content ul {
-    list-style-position: inside;
-    margin-bottom: 1rem;
-  }
-  
-  .lesson-content li {
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-  }
-  
-  .lesson-content p {
-    line-height: 1.6;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .lessons-grid, 
-    .pronunciation-grid, 
-    .flashcards-grid {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-    
-    .lesson-actions {
-      flex-direction: column;
-    }
-    
-    .lesson-card {
-      padding: 1.25rem;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .lessons-grid, 
-    .pronunciation-grid, 
-    .flashcards-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .play-audio {
-      width: 100%;
-    }
-    
-    .flashcard {
-      height: 150px;
-    }
-  }
