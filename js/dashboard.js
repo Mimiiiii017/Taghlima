@@ -155,31 +155,3 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 500);
     });
   }
-
-  import { getFirestore, doc, getDoc } from "firebase/firestore";
-
-const db = getFirestore();
-const userId = "CURRENT_USER_ID"; // replace with auth.currentUser.uid or similar
-
-async function updateSubscriptionUI() {
-  const userDoc = await getDoc(doc(db, "users", userId));
-
-  if (!userDoc.exists()) return;
-
-  const { isSubscribed } = userDoc.data();
-
-  const freemiumCard = document.querySelector("#freemium-card .subscription-status");
-  const premiumCard = document.querySelector("#premium-card .subscription-status");
-
-  if (isSubscribed) {
-    // Premium user
-    freemiumCard.innerHTML = `<button class="subscribe-btn">Downgrade</button>`;
-    premiumCard.innerHTML = `<span class="subscribed-text">You have this</span>`;
-  } else {
-    // Freemium user
-    freemiumCard.innerHTML = `<span class="subscribed-text">You have this</span>`;
-    premiumCard.innerHTML = `<button class="subscribe-btn">Subscribe Now!</button>`;
-  }
-}
-
-updateSubscriptionUI();
