@@ -1,0 +1,229 @@
+/* Certification Page Styles */
+.certification {
+  padding: 2rem 0;
+  background-color: var(--gray-100);
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.certification-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.readiness{
+grid-column: 1 / -1; 
+}
+
+/* Make these cards span the full width */
+.certification-intro,
+.partners,
+.cta-card {
+  grid-column: 1 / -1;
+}
+
+/* Steps styling */
+.steps-list {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.steps-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+/* Level cards styling */
+.certification-levels {
+  grid-column: span 2; /* Make it span 2 columns */
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.level-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: var(--bg);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  transition: transform 0.2s ease;
+}
+
+.level-item:hover {
+  transform: translateY(-3px);
+}
+
+.level-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.level-info h3 {
+  margin-bottom: 0.25rem;
+  font-size: var(--font-size-lg);
+}
+
+.level-info p {
+  margin-bottom: 0;
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+}
+
+/* Partners styling */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.partner-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--gray-100);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  transition: box-shadow 0.3s ease;
+}
+
+.partner-item:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.partner-logo {
+  width: 100px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.partner-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: var(--border-radius);
+}
+
+.partner-item h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: 0.5rem;
+}
+
+.partner-item p {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin-bottom: 1rem;
+}
+
+.partner-btn {
+  margin-top: auto;
+}
+
+/* Readiness section */
+.readiness-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.progress-indicator {
+  flex-shrink: 0;
+}
+
+.progress-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.readiness-info {
+  flex-grow: 1;
+}
+
+.readiness-info p {
+  margin-bottom: 1rem;
+}
+
+.readiness-info strong {
+  color: var(--primary-color);
+}
+
+/* CTA section */
+.cta-card {
+  text-align: center;
+  background-color: var(--bg);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .certification-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .certification-details {
+    grid-column: 1 / -1; 
+  }
+
+  .certification-levels {
+    grid-column: 1 / -1; 
+  }
+  
+  .level-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .certification-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .readiness-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .level-grid,
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .certification-card {
+    padding: 1.25rem;
+  }
+}
