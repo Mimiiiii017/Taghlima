@@ -135,6 +135,10 @@ grid-column: 1 / -1;
   margin-top: auto;
 }
 
+.partner-btn:hover {
+  text-decoration: none;
+}
+
 /* Readiness section */
 .readiness-container {
   display: flex;
@@ -176,6 +180,50 @@ grid-column: 1 / -1;
   justify-content: center;
   gap: 1rem;
   margin-top: 1.5rem;
+}
+
+.certification-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e9ecef;
+  text-align: center;
+}
+
+.certification-footer p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.certification-footer p:first-child {
+  font-weight: 600;
+  color: #202124;
+}
+
+.cert-price {
+  background: #ca1836;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0.5rem 0 1rem 0;
+  display: inline-block;
+}
+
+.cert-issuer {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+.level-icon {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
 }
 
 /* Responsive adjustments */

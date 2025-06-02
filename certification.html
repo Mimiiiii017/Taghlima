@@ -1,190 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tagħlima - Certification</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/certification.css">
-  <script src="js/app.js" defer></script>
-  <script src="js/certification.js" defer></script>
-</head>
-<body>
-  <header class="main-header">
-    <div class="container">
-      <nav class="main-nav">
-        <section class="logo">
-          <a href="index.html"></a>
-        </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tagħlima - Certification</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/certification.css" />
+    <script src="js/app.js" defer></script>
+    <script src="js/certification.js" defer></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <nav class="main-nav">
+          <section class="logo">
+            <a href="index.html"></a>
+          </section>
 
-        <!-- Hamburger Menu Button -->
-        <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" tabindex="0">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+          <!-- Hamburger Menu Button -->
+          <div
+            class="hamburger"
+            id="hamburger-menu"
+            aria-label="Toggle menu"
+            tabindex="0"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
-        <!-- Navigation Links Panel -->
-        <div class="nav-links" id="nav-links">
-          <a href="index.html">Home</a>
-          <a href="lessons.html">Lessons</a>
-          <a href="games.html">Games</a>
-          <a href="dashboard.html">Dashboard</a>
-          <a href="certification.html" class="active">Get Certified</a>
-          <div class="user-profile">
-            <img src="assets/pfp.jpg" alt="User Avatar" class="avatar">
-            <span class="username">User</span>
-            <div class="dropdown-content">
-              <a>Profile</a>
-              <a>Settings</a>
-              <a>Logout</a>
+          <!-- Navigation Links Panel -->
+          <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="games.html">Games</a>
+            <a href="certification.html">Certifications</a>
+            <a href="dashboard.html">Dashboard</a>
+            <div class="user-profile">
+              <img src="assets/pfp.jpg" alt="User Avatar" class="avatar" />
+              <span class="username">User</span>
+              <button id="logout-btn" class="btn btn-outline">Log Out</button>
             </div>
           </div>
-        </div>
 
-        <!-- Semi‑opaque overlay behind the panel -->
-        <div class="nav-overlay" id="nav-overlay"></div>
-      </nav>
+          <!-- Semi‑opaque overlay behind the panel -->
+          <div class="nav-overlay" id="nav-overlay"></div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="certification">
+      <div class="container">
+        <div class="certification-grid">
+          <div class="certification-card certification-intro">
+            <h2>Official Maltese Language Certification</h2>
+            <p>
+              Congratulations on progressing through our lessons! To officially
+              certify your language skills, we partner with licensed
+              institutions that offer Maltese language exams. These certificates
+              are recognised by employers, schools, and public institutions
+              across Malta.
+            </p>
+          </div>
+
+          <div class="certification-card certification-details">
+            <h2>How It Works</h2>
+            <ol class="steps-list">
+              <li>Complete all learning modules on this platform.</li>
+              <li>Pass our internal practice assessments to qualify.</li>
+              <li>Choose a partner institution from our list below.</li>
+              <li>Register and sit for the official certification exam.</li>
+              <li>
+                Receive a printed and/or digital certificate upon passing.
+              </li>
+            </ol>
+          </div>
+
+          <div class="certification-card certification-levels">
+            <h2>Certification Levels</h2>
+            <div class="level-grid">
+              <div class="level-item">
+                <div class="level-icon">🌱</div>
+                <div class="level-info">
+                  <h3>Beginner (MQF 1)</h3>
+                  <p>
+                    Basic communication, simple phrases, everyday expressions.
+                  </p>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="level-icon">🌿</div>
+                <div class="level-info">
+                  <h3>Elementary (MQF 2)</h3>
+                  <p>Simple conversations, basic needs, familiar topics.</p>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="level-icon">🌳</div>
+                <div class="level-info">
+                  <h3>Intermediate (MQF 3)</h3>
+                  <p>
+                    Clear standard input, produce connected text, describe
+                    experiences.
+                  </p>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="level-icon">🌲</div>
+                <div class="level-info">
+                  <h3>Advanced (MQF 4-5)</h3>
+                  <p>
+                    Complex texts, spontaneous interaction, detailed viewpoints.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="certification-card partners">
+            <h2>Our Partner Institutions</h2>
+            <div class="partners-grid">
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/unilogo.png" alt="University of Malta" />
+                </div>
+                <h3>University of Malta - Language Centre</h3>
+                <p>
+                  Official CEFR-aligned certifications with academic
+                  recognition.
+                </p>
+                <a href="#" class="btn btn-outline partner-btn"
+                  >Visit Website</a
+                >
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/mcast.png" alt="MCAST" />
+                </div>
+                <h3>MCAST Institute of Community Services</h3>
+                <p>Vocational language certifications with workplace focus.</p>
+                <a href="#" class="btn btn-outline partner-btn"
+                  >Visit Website</a
+                >
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/eeclogo.webp" alt="EEC - ITIS" />
+                </div>
+                <h3>
+                  Community-based language certifications designed for local
+                  residents.
+                </h3>
+                <p>Community-based language certifications for residents.</p>
+                <a href="#" class="btn btn-outline partner-btn"
+                  >Visit Website</a
+                >
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/dlslogo.png" alt="De La Salle College" />
+                </div>
+                <h3>De La Salle College</h3>
+                <p>
+                  A private institution offering flexible certification
+                  pathways.
+                </p>
+                <a href="#" class="btn btn-outline partner-btn"
+                  >Visit Website</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="certification-card readiness">
+            <h2>Check Your Readiness</h2>
+            <div class="readiness-container">
+              <div class="progress-indicator">
+                <div class="progress-circle" data-progress="78">
+                  <svg width="120" height="120" viewBox="0 0 120 120">
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="#e9ecef"
+                      stroke-width="12"
+                    />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="#ca1836"
+                      stroke-width="12"
+                      stroke-dasharray="339.3"
+                      stroke-dashoffset="74.6"
+                      transform="rotate(-90 60 60)"
+                    />
+                    <text
+                      x="60"
+                      y="65"
+                      font-size="20"
+                      text-anchor="middle"
+                      fill="#202124"
+                    >
+                      78%
+                    </text>
+                  </svg>
+                </div>
+              </div>
+              <div class="readiness-info">
+                <p>
+                  Based on your current progress, you're
+                  <strong>78% ready</strong> for the Beginner (MQF 1)
+                  certification exam.
+                </p>
+                <p>Keep practicing to improve your readiness!</p>
+                <button class="btn btn-primary">Take Practice Test</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="certification-card cta-card">
+  <h2>Available Certifications</h2>
+  <div class="partners-grid">
+    <div class="partner-item">
+      <div class="partner-logo">
+        <div class="level-icon">🌱</div>
+      </div>
+      <h3>Beginner Certificate (MQF 1)</h3>
+      <p>Basic communication skills and everyday expressions. Perfect for newcomers to Malta.</p>
+      <div class="cert-issuer">Certified by: University of Malta</div>
+      <div class="cert-price">€30</div>
+      <a href="#" class="btn btn-outline partner-btn">Buy Certificate Test</a>
     </div>
-  </header>
 
-  <main class="certification">
-    <div class="container">
-      <div class="certification-grid">
-        <div class="certification-card certification-intro">
-          <h2>Official Maltese Language Certification</h2>
-          <p>
-            Congratulations on progressing through our lessons! To officially certify your language skills,
-            we partner with licensed institutions that offer Maltese language exams. These certificates are
-            recognised by employers, schools, and public institutions across Malta.
-          </p>
-        </div>
+    <div class="partner-item">
+      <div class="partner-logo">
+        <div class="level-icon">🌿</div>
+      </div>
+      <h3>Elementary Certificate (MQF 2)</h3>
+      <p>Simple conversations and basic needs communication for daily life in Malta.</p>
+      <div class="cert-issuer">Certified by: MCAST Institute</div>
+      <div class="cert-price">€30</div>
+      <a href="#" class="btn btn-outline partner-btn">Buy Certificate Test</a>
+    </div>
 
-        <div class="certification-card certification-details">
-          <h2>How It Works</h2>
-          <ol class="steps-list">
-            <li>Complete all learning modules on this platform.</li>
-            <li>Pass our internal practice assessments to qualify.</li>
-            <li>Choose a partner institution from our list below.</li>
-            <li>Register and sit for the official certification exam.</li>
-            <li>Receive a printed and/or digital certificate upon passing.</li>
-          </ol>
-        </div>
+    <div class="partner-item">
+      <div class="partner-logo">
+        <div class="level-icon">🌳</div>
+      </div>
+      <h3>Intermediate Certificate (MQF 3)</h3>
+      <p>Clear communication and connected text production for work and social settings.</p>
+      <div class="cert-issuer">Certified by: De La Salle College</div>
+      <div class="cert-price">€30</div>
+      <a href="#" class="btn btn-outline partner-btn">Buy Certificate Test</a>
+    </div>
 
-        <div class="certification-card certification-levels">
-          <h2>Certification Levels</h2>
-          <div class="level-grid">
-            <div class="level-item">
-              <div class="level-icon">🌱</div>
-              <div class="level-info">
-                <h3>Beginner (MQF 1)</h3>
-                <p>Basic communication, simple phrases, everyday expressions.</p>
-              </div>
-            </div>
-            <div class="level-item">
-              <div class="level-icon">🌿</div>
-              <div class="level-info">
-                <h3>Elementary (MQF 2)</h3>
-                <p>Simple conversations, basic needs, familiar topics.</p>
-              </div>
-            </div>
-            <div class="level-item">
-              <div class="level-icon">🌳</div>
-              <div class="level-info">
-                <h3>Intermediate (MQF 3)</h3>
-                <p>Clear standard input, produce connected text, describe experiences.</p>
-              </div>
-            </div>
-            <div class="level-item">
-              <div class="level-icon">🌲</div>
-              <div class="level-info">
-                <h3>Advanced (MQF 4-5)</h3>
-                <p>Complex texts, spontaneous interaction, detailed viewpoints.</p>
-              </div>
-            </div>
+    <div class="partner-item">
+      <div class="partner-logo">
+        <div class="level-icon">🌲</div>
+      </div>
+      <h3>Advanced Certificate (MQF 4-5)</h3>
+      <p>Complex text comprehension and spontaneous interaction for professional use.</p>
+      <div class="cert-issuer">Certified by: EEC - ITIS</div>
+      <div class="cert-price">€30</div>
+      <a href="#" class="btn btn-outline partner-btn">Buy Certificate Test</a>
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-content">
+          <section class="footer-logo">
+            <a href="index.html"></a>
+          </section>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#contact">Contact</a>
           </div>
-        </div>
-
-        <div class="certification-card partners">
-          <h2>Our Partner Institutions</h2>
-          <div class="partners-grid">
-            <div class="partner-item">
-              <div class="partner-logo"><img src="./assets/unilogo.png" alt="University of Malta"></div>
-              <h3>University of Malta - Language Centre</h3>
-              <p>Official CEFR-aligned certifications with academic recognition.</p>
-              <a href="#" class="btn btn-outline partner-btn">Visit Website</a>
-            </div>
-            <div class="partner-item">
-              <div class="partner-logo"><img src="./assets/mcast.png" alt="MCAST"></div>
-              <h3>MCAST Institute of Community Services</h3>
-              <p>Vocational language certifications with workplace focus.</p>
-              <a href="#" class="btn btn-outline partner-btn">Visit Website</a>
-            </div>
-            <div class="partner-item">
-              <div class="partner-logo"><img src="./assets/eeclogo.webp" alt="EEC - ITIS"></div>
-              <h3>Community-based language certifications designed for local residents.</h3>
-              <p>Community-based language certifications for residents.</p>
-              <a href="#" class="btn btn-outline partner-btn">Visit Website</a>
-            </div>
-            <div class="partner-item">
-              <div class="partner-logo"><img src="./assets/dlslogo.png" alt="De La Salle College"></div>
-              <h3>De La Salle College</h3>
-              <p> A private institution offering flexible certification pathways.</p>
-              <a href="#" class="btn btn-outline partner-btn">Visit Website</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="certification-card readiness">
-          <h2>Check Your Readiness</h2>
-          <div class="readiness-container">
-            <div class="progress-indicator">
-              <div class="progress-circle" data-progress="78">
-                <svg width="120" height="120" viewBox="0 0 120 120">
-                  <circle cx="60" cy="60" r="54" fill="none" stroke="#e9ecef" stroke-width="12" />
-                  <circle cx="60" cy="60" r="54" fill="none" stroke="#ca1836" stroke-width="12" stroke-dasharray="339.3" stroke-dashoffset="74.6" transform="rotate(-90 60 60)" />
-                  <text x="60" y="65" font-size="20" text-anchor="middle" fill="#202124">78%</text>
-                </svg>
-              </div>
-            </div>
-            <div class="readiness-info">
-              <p>Based on your current progress, you're <strong>78% ready</strong> for the Beginner (MQF 1) certification exam.</p>
-              <p>Keep practicing to improve your readiness!</p>
-              <button class="btn btn-primary">Take Practice Test</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="certification-card cta-card">
-          <h2>Ready to Get Certified?</h2>
-          <p>
-            When you feel prepared, our support team can help you with registration forms and guide you through the next steps.
-          </p>
-          <div class="cta-buttons">
-            <a href="#" class="btn btn-primary">Contact Support</a>
-            <a href="mailto:certify@taghlima.mt" class="btn btn-secondary">Email Us</a>
-          </div>
+          <div class="copyright">© 2025 Tagħlima. All rights reserved.</div>
         </div>
       </div>
-    </div>
-  </main>
-
-  <footer class="main-footer">
-    <div class="container">
-      <div class="footer-content">
-        <section class="footer-logo">
-          <a href="index.html"></a>
-        </section>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="copyright">
-          © 2025 Tagħlima. All rights reserved.
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
