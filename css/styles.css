@@ -16,6 +16,7 @@
     --gray-500: #c0c4c9;
     --gray-600: #6c757d;
     --gray-900: #212529;
+    --footer: #fff1f3;
     
     /* Typography */
     --font-sans: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -330,7 +331,8 @@ a:hover {
   
 /* Footer */
 .main-footer {
-    background-image: linear-gradient(to bottom right, rgb(73, 0, 0, 0.8), rgba(26, 26, 26, 0.9));
+    background-color: var(--footer);
+     /* background-image: linear-gradient(to top, #fde2e6, #ffffffe6);  */
     color: var(--white);
     padding-bottom: 2rem;
     padding-top: 1rem;
@@ -358,7 +360,7 @@ a:hover {
 }
   
 .footer-links a {
-    color: var(--white);
+    color: var(--black);
 }
   
 .copyright {
@@ -871,6 +873,18 @@ a:hover {
         height: 350px;
         background-position: center 30%;
     }
+}
+
+.cert-price {
+  background: #ca1836;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0.5rem 0 1rem 0;
+  display: inline-block;
 }
 
 @media (max-width: 375px) {
