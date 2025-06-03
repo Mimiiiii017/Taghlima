@@ -416,16 +416,14 @@ function initFillBlanksGame() {
       
       // Word pairs for translation (Maltese to English)
       const wordPairs = [
-        { maltese: 'bongu', english: 'good morning' },
+        { maltese: 'bonġu', english: 'good morning' },
         { maltese: 'ħobż', english: 'bread' },
         { maltese: 'ilma', english: 'water' },
         { maltese: 'grazzi', english: 'thank you' },
-        { maltese: 'saħħa', english: 'health' },
         { maltese: 'iva', english: 'yes' },
         { maltese: 'le', english: 'no' },
-        { maltese: 'jien', english: 'i am' },
-        { maltese: 'kif inti', english: 'how are you' },
-        { maltese: 'mela', english: 'then' }
+        { maltese: 'jien', english: 'me' },
+        { maltese: 'kif inti', english: 'how are you' }
       ];
       
       let currentPairIndex = 0;
@@ -484,7 +482,7 @@ function initFillBlanksGame() {
       // Quiz questions (Maltese words and options)
       const quizQuestions = [
         {
-          word: 'bongu',
+          word: 'bonġu',
           options: ['good morning', 'goodbye', 'good night', 'hello'],
           correctIndex: 0
         },
